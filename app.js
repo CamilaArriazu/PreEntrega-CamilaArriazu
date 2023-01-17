@@ -1,40 +1,22 @@
 alert("Bienevenido a Cecé showroom")
-///Condicional
-let productos = prompt("Ingrese la cantidad de productos que desea agregar al carrito")
+const prendasCarrito= []
 
-if (productos >0 && productos<5){
-    alert("Tenés un 10% de descuento")
-} else if (productos <10){
-    alert("Tenés un 20% de descuento")
+class infoprendas{
+    constructor (codigo, precio, categoria){
+        this.codigo = codigo;
+        this.precio = parseInt(precio);
+        this.categoria = categoria;
+    }
 }
-else{
-    alert("Tenés un 30% de descuento")
+function prendas(){
+    const codigo = prompt("Ingresa el código de la prenda")
+    const precio = parseInt(prompt("Ingresa el precio de la prenda"))
+    const categoria = prompt("Ingresa la categoria de la prenda")
 }
-///Bucles
 
-let precio
-let carrito = 0
 
-do
-{  
-    precio = prompt("Ingrese el precio de uno de los productos elegidos") 
-    precio = parseFloat(precio)
-    carrito= carrito + precio
-    console.log(carrito)
-}while(precio != 0)
-alert("El total de su compra es de: " + carrito)
-///Función
+const agregarPrenda= new infoprendas(codigo, precio, categoria)
 
-function porcentaje(total, descuento){
-    let resultado
-    resultado= total /100 * descuento
-    return resultado
-}
-let total=prompt("Ingrese el total de su compra")
-let descuento= prompt ("Ingrese el valor del cupón de descuento asignado segun la cantidad de productos seleccionados")
-total=parseFloat(total)
-descuento=parseInt(descuento)
-let resultado 
-resultado= porcentaje(total, descuento)
-alert("El total de su compra con descuento es:"+ resultado)
+prendasCarrito.push(agregarPrenda)
 
+alert(prendasCarrito)
